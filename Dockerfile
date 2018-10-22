@@ -3,7 +3,6 @@ FROM ubuntu:latest
 LABEL author Carlin Scott <carlin.q.scott@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV DISPLAY=192.168.99.1:0.0
 
 RUN useradd  -m firefox
 
