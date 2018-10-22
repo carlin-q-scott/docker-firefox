@@ -6,7 +6,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DISPLAY=192.168.99.1:0.0
 
 RUN useradd  -m firefox
-USER firefox
 
 RUN apt-get update
 RUN apt-get install -y software-properties-common && \
@@ -14,4 +13,5 @@ RUN apt-get install -y software-properties-common && \
 
 RUN apt-get update && \
     apt-get install -y firefox-trunk
+USER firefox
 ENTRYPOINT [ "firefox-trunk" ]
