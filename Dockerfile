@@ -11,10 +11,7 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends $(apt-cache depends firefox | grep Depends | sed "s/.*ends:\ //" | tr '\n' ' ')
 
 # Install the appropriate Firefox build
-RUN apt-get install -y software-properties-common && \
-    add-apt-repository ppa:ubuntu-mozilla-daily/ppa && \
-    apt-get update
-RUN apt-get install -y --no-install-recommends firefox-trunk
+RUN apt-get install -y --no-install-recommends firefox
 
 USER firefox
-ENTRYPOINT [ "firefox-trunk" ]
+ENTRYPOINT [ "firefox" ]
