@@ -6,11 +6,15 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN useradd  -m firefox
 
+# install Firefox dependencies
 RUN apt-get update
-RUN apt-get install -y software-properties-common && \
-    add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+RUN apt-get install -y --no-install-recommends $(apt-cache depends firefox | grep Depends | sed "s/.*ends:\ //" | tr '\n' ' ')
 
-RUN apt-get update && \
-    apt-get install -y firefox-trunk
+# Install the appropriate Firefox build
+RUN apt-get install -y software-properties-common && \
+    add-apt-repository ppa:ubuntu-mozilla-daily/ppa && \
+    apt-get update
+RUN apt-get install -y --no-install-recommends firefox-trunk
+
 USER firefox
 ENTRYPOINT [ "firefox-trunk" ]
