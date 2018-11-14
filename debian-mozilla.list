@@ -1,1 +1,1 @@
-deb http://mozilla.debian.net/ jessie-backports firefox-release
+deb http://security.debian.org/ jessie/updates main
