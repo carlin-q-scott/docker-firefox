@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:sdk
+FROM node:8
 
 LABEL author Carlin Scott <carlin.q.scott@gmail.com>
 
