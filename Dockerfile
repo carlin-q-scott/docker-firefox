@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM microsoft/dotnet:sdk
 
 LABEL author Carlin Scott <carlin.q.scott@gmail.com>
 
