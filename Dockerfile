@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:10.16.3
 
 LABEL author Carlin Scott <carlin.q.scott@gmail.com>
 
